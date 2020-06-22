@@ -1,6 +1,8 @@
-package com.jahendamercy.com;
+package com.jahendamercy.com.views.fragments;
 
 import android.app.Activity;
+import android.app.TabActivity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
@@ -8,19 +10,24 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
+import android.widget.TabHost;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class AfyaFragment extends Activity {
+import com.jahendamercy.com.MyWebViewClient;
+import com.jahendamercy.com.R;
+
+@SuppressWarnings("deprecation")
+public class SabbathhousetextFragment extends Activity {
 
     private WebView webView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_afya);
+        setContentView(R.layout.fragment_sabbathhousetext);
 
         this.webView = (WebView) findViewById(R.id.webview);
 
@@ -30,7 +37,7 @@ public class AfyaFragment extends Activity {
         MyWebViewClient webViewClient = new MyWebViewClient(this);
         webView.setWebViewClient(webViewClient);
 
-        webView.loadUrl("https://www.Afya1.com");
+        webView.loadUrl("https://www.calledoutbelievers.org/");
     }
 
     @Override
@@ -42,4 +49,6 @@ public class AfyaFragment extends Activity {
 
         return super.onKeyDown(keyCode, event);
     }
+
+
 }

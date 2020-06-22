@@ -22,7 +22,8 @@
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
 
-        <activity android:name=".Login"
+
+        <activity android:name=".views.activities.Login"
             android:theme="@style/AppTheme.NoActionBar"
             tools:ignore="Instantiatable">
             <intent-filter>
@@ -31,7 +32,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Registration" />
+        <activity android:name=".views.activities.Registration" />
     </application>
 
 </manifest>

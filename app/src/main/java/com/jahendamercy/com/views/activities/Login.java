@@ -1,9 +1,10 @@
-package com.jahendamercy.com;
+package com.jahendamercy.com.views.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,11 +23,12 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.jahendamercy.com.R;
 
 public class Login extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
 
     private static final String TAG = "MainActivity";
-    private SignInButton signInButton;
+    private Button signInButton;
     private GoogleApiClient googleApiClient;
     private static final int RC_SIGN_IN = 1;
     String name, email;
@@ -37,7 +39,7 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_login);
 
         firebaseAuth = com.google.firebase.auth.FirebaseAuth.getInstance();
         //this is where we start the Auth state Listener to listen for whether the user is signed in or not
@@ -64,17 +66,21 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
                 .requestIdToken(getString(R.string.web_client_id))//you can also use R.string.default_web_client_id
                 .requestEmail()
                 .build();
+
         googleApiClient=new GoogleApiClient.Builder(this)
                 .enableAutoManage(this,this)
                 .addApi(Auth.GOOGLE_SIGN_IN_API,gso)
                 .build();
 
-        signInButton = findViewById(R.id.sign_in_button);
+        signInButton = (Button)findViewById(R.id.sign_in_button);
+
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                Toast.makeText(Login.this, "Loading....", Toast.LENGTH_LONG).show();
                 Intent intent = Auth.GoogleSignInApi.getSignInIntent(googleApiClient);
                 startActivityForResult(intent,RC_SIGN_IN);
+
             }
         });
     }
@@ -87,24 +93,29 @@ public class Login extends AppCompatActivity implements GoogleApiClient.OnConnec
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if(requestCode==RC_SIGN_IN){
+        if(requestCode == RC_SIGN_IN){
             GoogleSignInResult result = Auth.GoogleSignInApi.getSignInResultFromIntent(data);
-            handleSignInResult(result);
+            if (result != null) {
+                handleSignInResult(result);
+            }
         }
     }
 
     private void handleSignInResult(GoogleSignInResult result){
         if(result.isSuccess()){
             GoogleSignInAccount account = result.getSignInAccount();
-            idToken = account.getIdToken();
-            name = account.getDisplayName();
-            email = account.getEmail();
+            if (account != null) {
+                idToken = account.getIdToken();
+
+                name = account.getDisplayName();
+                email = account.getEmail();
+            }
             // you can store user data to SharedPreference
             AuthCredential credential = GoogleAuthProvider.getCredential(idToken, null);
             firebaseAuthWithGoogle(credential);
         }else{
             // Google Sign In failed, update UI appropriately
-            Log.e(TAG, "Login Unsuccessful. "+result);
+            Log.e(TAG, "Login Unsuccessful. "+ result.getStatus());
             Toast.makeText(this, "Login Unsuccessful", Toast.LENGTH_SHORT).show();
         }
     }

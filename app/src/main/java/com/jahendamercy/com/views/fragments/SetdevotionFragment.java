@@ -1,4 +1,4 @@
-package com.jahendamercy.com;
+package com.jahendamercy.com.views.fragments;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
@@ -15,6 +15,8 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+
+import com.jahendamercy.com.R;
 
 import java.util.Calendar;
 

@@ -19,7 +19,7 @@
         android:layout_marginTop="25dp"
         android:layout_marginEnd="109dp"
         android:layout_marginRight="109dp"
-        android:background="@color/browser_actions_bg_grey"
+        android:background="#eeee"
         android:text="Enter Name"
         android:textColor="@android:color/black"
         android:textSize="30sp" />

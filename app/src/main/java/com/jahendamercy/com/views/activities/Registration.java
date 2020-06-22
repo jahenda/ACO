@@ -1,4 +1,4 @@
-package com.jahendamercy.com;
+package com.jahendamercy.com.views.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,9 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.jahendamercy.com.DatabaseConn;
+import com.jahendamercy.com.PrivacyPolicy;
+import com.jahendamercy.com.R;
+import com.jahendamercy.com.TermofUse;
 
 public class Registration extends AppCompatActivity {
     DatabaseConn db;
@@ -45,7 +49,7 @@ public class Registration extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent loginIntent = new Intent(Registration.this,MainActivity.class);
+                Intent loginIntent = new Intent(Registration.this, MainActivity.class);
                 startActivity(loginIntent);
             }
 
@@ -63,7 +67,7 @@ public class Registration extends AppCompatActivity {
                     long val = db.addUser(user, pwd);
                     if(val > 0){
                         Toast.makeText(Registration.this,"You have registered", Toast.LENGTH_SHORT).show();
-                        Intent moveToLogin = new Intent(Registration.this,Login.class);
+                        Intent moveToLogin = new Intent(Registration.this, Login.class);
                         startActivity(moveToLogin);
                     }
                     else{
@@ -81,7 +85,7 @@ public class Registration extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                Intent termsofuseIntent = new Intent(Registration.this,TermofUse.class);
+                Intent termsofuseIntent = new Intent(Registration.this, TermofUse.class);
                 startActivity(termsofuseIntent);
             }
         });
@@ -89,7 +93,7 @@ public class Registration extends AppCompatActivity {
         privacyPolicy.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent privacypolicyIntent = new Intent(Registration.this,PrivacyPolicy.class);
+                Intent privacypolicyIntent = new Intent(Registration.this, PrivacyPolicy.class);
                 startActivity(privacypolicyIntent);
             }
         });

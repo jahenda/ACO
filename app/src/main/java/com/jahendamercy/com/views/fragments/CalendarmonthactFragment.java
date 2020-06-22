@@ -1,4 +1,4 @@
-package com.jahendamercy.com;
+package com.jahendamercy.com.views.fragments;
 
 import android.app.Activity;
 import android.app.TabActivity;
@@ -16,14 +16,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
-public class SabbathhousesupplyFragment extends Activity {
+import com.jahendamercy.com.MyWebViewClient;
+import com.jahendamercy.com.R;
+
+@SuppressWarnings("deprecation")
+public class CalendarmonthactFragment extends Activity {
 
     private WebView webView = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fragment_sabbathhousesupply);
+        setContentView(R.layout.fragment_calendarmonthact);
 
         this.webView = (WebView) findViewById(R.id.webview);
 
@@ -45,4 +49,6 @@ public class SabbathhousesupplyFragment extends Activity {
 
         return super.onKeyDown(keyCode, event);
     }
+
+
 }

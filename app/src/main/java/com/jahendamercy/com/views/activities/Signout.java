@@ -1,4 +1,4 @@
-package com.jahendamercy.com;
+package com.jahendamercy.com.views.activities;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -20,6 +20,8 @@ import com.google.android.gms.common.api.OptionalPendingResult;
 import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.Status;
 import com.google.firebase.auth.FirebaseAuth;
+import com.jahendamercy.com.R;
+import com.jahendamercy.com.views.activities.MainActivity;
 
 public class Signout extends AppCompatActivity implements GoogleApiClient.OnConnectionFailedListener {
     Button logoutBtn;
@@ -95,7 +97,7 @@ public class Signout extends AppCompatActivity implements GoogleApiClient.OnConn
         }
     }
     private void gotoMainActivity(){
-        Intent intent=new Intent(this,MainActivity.class);
+        Intent intent=new Intent(this, MainActivity.class);
         startActivity(intent);
     }
     @Override

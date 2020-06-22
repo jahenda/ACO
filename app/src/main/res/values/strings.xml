@@ -5,4 +5,7 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
     <string name="map_key" translatable="false">AIzaSyC-go6qMoINHofQTFBRVGwMGYQ7CFqxhpg</string>
     <string name="web_client_id">119406806169-u0mrn9lm1fn8rnuhlru7837ko9rogb0t.apps.googleusercontent.com</string>
+    <string name="torah_awakening_among_non_jews">Torah Awakening Among Non-Jews</string>
+    <string name="sign_up_with_google">Sign Up With Google</string>
+    <string name="ten_from_the_nations">TEN FROM THE NATIONS</string>
 </resources>

@@ -6,53 +6,45 @@
 
 
     <TextView
-        android:layout_width="298dp"
-        android:layout_height="56dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="55dp"
-        android:layout_marginEnd="49dp"
-        android:layout_marginRight="49dp"
+        android:id="@+id/top_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_marginTop="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:fontFamily="@font/abel"
-        android:text="TEN FROM THE NATIONS"
+        android:text="@string/ten_from_the_nations"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="30sp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView2"
+        android:layout_below="@id/top_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="60dp"
-        android:layout_marginLeft="60dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginEnd="-12dp"
-        android:layout_marginRight="-12dp"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:layout_margin="16dp"
         android:fontFamily="@font/leckerli_one"
-        android:text="Torah Awakening Among Non-Jews"
+        android:text="@string/torah_awakening_among_non_jews"
         android:textColor="@color/common_google_signin_btn_text_dark_default"
         android:textSize="36sp"
         android:textStyle="bold|italic" />
 
 
-    <com.google.android.gms.common.SignInButton
+    <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sign_in_button"
+        android:text="@string/sign_up_with_google"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="20dp">
 
-    </com.google.android.gms.common.SignInButton>
+    </Button>
 
     </RelativeLayout>

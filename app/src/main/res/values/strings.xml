@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">ACOB</string>
+    <string name="not_registered">Not Registered?</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="map_key" translatable="false">AIzaSyC-go6qMoINHofQTFBRVGwMGYQ7CFqxhpg</string>
+    <string name="web_client_id">119406806169-u0mrn9lm1fn8rnuhlru7837ko9rogb0t.apps.googleusercontent.com</string>
+</resources>

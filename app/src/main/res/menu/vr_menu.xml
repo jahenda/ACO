@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <group android:checkableBehavior="single">
+        <item android:id="@+id/nav_sabbathhouse"
+            android:title="Join Sabbath House"/>
+
+        <item android:id="@+id/nav_sabbathhousetext"
+            android:title="Sabbath House Texts"/>
+
+        <item android:id="@+id/nav_setdevotions"
+            android:title="Set my Devotions"/>
+
+        <item android:id="@+id/nav_sabbathhousesupplie"
+            android:title="Sabbath House Supplies"/>
+
+        <item android:id="@+id/nav_calendarmonthact"
+            android:title="Calendar Month Activities"/>
+
+        <item android:id="@+id/nav_communication"
+            android:title="Communication"/>
+
+    </group>
+
+    <item android:title="Others">
+        <menu>
+            <item android:id="@+id/nav_emergencydial"
+                android:icon="@drawable/phone1"
+                android:title="Emergency Dial"/>
+
+            <item android:id="@+id/nav_payment"
+                android:icon="@drawable/shoppingcart1"
+                android:title="PayPal"/>
+
+            <item android:id="@+id/phone_in"
+                android:icon="@drawable/phone1"
+                android:title="Phone_In"/>
+
+            <item android:id="@+id/nav_afya"
+                android:icon="@drawable/hospital3"
+                android:title="Afya"/>
+
+
+            <item android:id="@+id/nav_logout"
+                android:title="Logout"/>
+
+
+
+        </menu>
+    </item>
+
+
+</menu>
